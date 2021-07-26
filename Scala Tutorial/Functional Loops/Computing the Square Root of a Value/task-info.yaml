@@ -1,0 +1,41 @@
+type: edu
+files:
+- name: build.sbt
+  visible: false
+  encrypted_text: TUiaZ/8zYhVmHrpT1DX+d2x7MHsTMqoytTwC3VLB9NqE4vHTloatj0MqT55LHJwqW/nvGCOta2CtWudYsOPMPzXCj7IZqoy1MonAzxtKkbkrsxHhO24jbuGqd+sZlDsAgn3zzOtArK4d/WUgqsCCVsm1k9V2T9WUAwjXjOQfz6GOerLXjOqgQ3DSKGDsfRnO6awXltcaxIxpUbShMu9Yxt8sKd5507VxWK/Wvv2Zi4DQbPYeDYQjNXHyoFYYTmIm0ExNfLudWEluhrt9m8VsMMwf9bL/sgFQjWqQt/SVtCVDInQn89MIdtUqjdci4+WVYGP3OZQNmebwycx1D8Z8meJrT//2gQH/TFN2xfBlrImZYL+ONQ431SwMXWsT199U
+  learner_created: false
+- name: test/TestSpec.scala
+  visible: false
+  encrypted_text: vV4mWbw2aOO+exjLEcFuWfaS9HYg1UpRZBGPw0jw2pxLqK4DtqwI9mZPsWkJ3oLs6l6mQfI/7Cqcovwg0GJBm0BJSIbrDuYwUpfY2xnMz+HgCzmX1DlEd3/dQMfU0sn798hNkQMqE4cAFghtDE6/JlG61CftfRPloPNLzDNTpzRjMGW20E7KmZ3s5jBpL6ERDtamis1dNxmsZej8vc7l/pFH6PkDuLBJCr/y38MXaqtAu0mLT3sUwqy4UCOA9Gu/DLY0HEPnF7ewZyEX/SRsn9mbp1ORCAebRmcnkMbzniA8rR8L2I0FfgGxhnLh3mHE4kk8LJSPhCdTXcAqfvfuQQ==
+  learner_created: false
+- name: src/ComputingSquareRoot.scala
+  visible: true
+  placeholders:
+  - offset: 74
+    length: 5
+    placeholder_text: //you can just return the guess here
+    initial_state:
+      length: 36
+      offset: 65
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: 8+QmxHdGHVBeIHFhi/h5dA==
+  - offset: 158
+    length: 42
+    placeholder_text: //here we need to put an expression for evaluating a better
+      guess
+    initial_state:
+      length: 65
+      offset: 185
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: wSwWBs1DywDSg92Nb+Z9qjulUdhiT9wRvxaSM7Ueu5o=
+  encrypted_text: Z7NdhO2mCR3RJ9VG5AgGZIpuDlw22tZLKIsrVwCOUfMKzf9MHiKnbtySIDXmeuA4GVoYNIrl8b6rl63vIaw8Y4vsuOCsskrv66lliQvZbexunfO7UfiMi5UY2C+GMPoU9wcJrn4hLLD8OdCpSpwjat4OmLLp3YlnSSBhorSt5nEpYIKDVsOo9N3gx6v5ai8066iwp+hRHJLuvEbLL6nge4vz9Fr+P1PyfaFO/dVFDJcarS7FyM8f9YoY387H9hjuhBQhmDVBy6lYVDVKzuLLfpBukw90gP94kV7yecjfgW25H5cJfJ2mMgJI8PoBQzQ+JCzd+7D/o8GWPWJ18Kwk3kDqbCQcv4oFd/3RxE5MWufJrJEbNBzPqg7AI0amDkiR8Z8vKjXFhsG7iVGGyNf9xIsHpCurRE4lx5RzLyJgVbKCALJ6MP9H6ncxgBq7WMZoNSH+qI+ocXU1Q3uYZncOkmT6tkPjBK04Ym8qK4/bo2N8Tp421Q+5PggszUJlyLei0GkUHrbykcLkofD1hcbOC6B0c5gL453AyFU1+RS17jR0oLKHrdYqrVIKhLuG++lc+LX0HZqBlHUhrgEJhctY39vf7XIEWSOmReWAy1KB8QZWUcCdKDGwovZmnB13q50x97cSYbhjFgVP5B8/7eNf+PK8t498D9R0svRSHsj3UB2TSP1+kyXvVwtEDs0j57lR
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 19 Jul 2021 01:19:22 UTC
+record: -1

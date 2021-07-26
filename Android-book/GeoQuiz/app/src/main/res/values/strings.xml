@@ -1,0 +1,19 @@
+<resources>
+    <!--Интерфейс-->
+    <string name="app_name">Опросник</string>
+    <string name="true_button">ДА</string>
+    <string name="false_button">НЕТ</string>
+    <string name="correct_toast">Красава</string>
+    <string name="incorrect_toast">Странный ты...</string>
+    <string name="next_button">NEXT</string>
+    <string name="prev_button">PREV</string>
+    <string name="warning_text">Вы точно хотите сделать это?!</string>
+    <string name="show_answer_button">Показать ответ</string>
+    <string name="cheat_button">СЖУЛЬНИЧАТЬ</string>
+    <string name="judgment_toast">Жулик не воруй!</string>
+
+    <!--Вопросы-->
+    <string name="shrek_question_text">Нравится Шрек 2?</string>
+    <string name="ipad_question_text">iPad 3 вышел в 2012?</string>
+    <string name="keyboard_question_text">Клавиатура светится красным?</string>
+</resources>

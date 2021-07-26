@@ -1,0 +1,27 @@
+type: edu
+files:
+- name: build.sbt
+  visible: false
+  encrypted_text: CukRDbC3DfJyiMZR5zMmpkQbla3sAip42SamOTIi1uLTG0vHpNA2NYFoSsgtqIAHfdpO9hhDmTUX22FVylIVbPmtm7qSRBPN9Ry91KYmdzn3s9A/RMPkpXzUOcjIXEnTIaEXAj3NE+cljGiSdilbVXFFlqLqHw92+7aknTyxZcIz7UQtxOl053ihus631zvR8sIG2GomH9voX7K1lwj9BhmeFKSl82lJX1FL5gjl6bFugsTNre8ypgbtWdgAVhIt8qEHBPGvs7jlqI5xdkIH7VRUC5MOHf6jc52n+sOegIZvt1dvOHCbJxLIVsx/Y89f4+7VggaYgk9fbqBcFeMxbg==
+  learner_created: false
+- name: src/LazyEvaluation.scala
+  visible: true
+  placeholders:
+  - offset: 208
+    length: 49
+    placeholder_text: /*call the streamRange for the rest of the list*/
+    initial_state:
+      length: 49
+      offset: 208
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: WWXwpK/x8dZTxakxDZsBSILUX13XkDTQtV4IILmKjh4=
+  encrypted_text: xn0/4d0Q9hMIRxVa/IDuvpR1qRUCYv/UfMreEFKrG2dQrS07wqtshyGzP5CCtSNPeckAVdTwwpqiXQq2rXt+04DCMm5J4O1AXJlJCTcScpGirW0TUN3Uyx4yXXJKGE/MojvIW17LX0blUJJRftdbNlhsj1C/wuVDjRUiqaKELyTtffKnsmD/CP9vuVk2RIkxxS0ZwLBOa1lDRB7FeOiPj59hDKFe3KwEnGxnLCgMzYrcf0Stv4/9nveDDpr0lOlDpRKbN3LR+N3c8Z/Lc1jJa8xB5mSc5aZoQoGqYg1fpl81yo7Ny4iMa/TQ8PVy8tUHO+X25OgvMm1Px/wrXUij+wSFo99cshY4uG0AVySMTWK7sXaxH8vzFNUhkINurd21dg4Tzf1KqI0Vu3CRYhMTHfBdCHk3L7JUPBwH33EC953Iqi4CNGEs+dWci4Ovi8UJIoa5kcDQL5rsOxJ66s1WgAQi5C9CNc0UR95GQurgTyN2VPFqvAOv9hTrP3HF2MkJoYuPUaYZ7RHlr9YnJ620NcTcrLJQmERcbsO5YouAfFX/oQDrPl7wF9EjEoM0AM6n602sGef3eDmoMBcr3wTQapiaad10xeJ77RPumB5WxnYTFMxtJA/ptqWD+672h1H9
+  learner_created: false
+- name: test/Test.scala
+  visible: false
+  encrypted_text: GouLHUoeKkKMfp6F0CbLuGj5cpaQMmtLd9i/0rVYvSR1xs4omJpqKjdLGVgotEd6UROqeAc7YJJagrd0KfX/wBlpnRib5wuQk0K/NClBV2F9PKHGqpTCZ4FFdsGzYIplnoXxMnq8V0Or4Ir0pDM46TuDxhtYtABNsG5sP4v+VvSA/0Hd6if6M+o3v6eY5xzAKoxDlHmHQXsPRYsejxiMlEgiph6tT79pVmUitBMvLOYd5lyoXjSqmNvEBBIJQnZEhQ5IKMwa4m2gxyLstOksq3s1KD12/A9k4WR41edjI46ueqxG1+W6PYI7yiq2ADZQ21Qr3VXsObMZ7BCsm7E4dIAMdciy+Q6/jcMMVq7bHFy8wPgSADoSst3uJ9HExjQwWStQSyXtGxrUiAdnOxFXED4mo7lTUuu5DffpQZjRGyrffIjfnPpzE0FXBCxDwJ/id6MBDulfZXuiWeO9ZY3WyW4wCrSEXUuZ4G+XCGuzevU=
+  learner_created: false
+status: Unchecked
+record: -1

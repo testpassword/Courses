@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FlickrGallery</string>
+    <string name="empty_hint">Data is empty. Check your internet connection or try later.</string>
+</resources>
