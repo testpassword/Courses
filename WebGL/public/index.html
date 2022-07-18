@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React Demo</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+  <script src="webgl-utils.js"></script>
+  <script src="webgl-debug.js"></script>
+  <script src="cuon-utils.js"></script>
+  <script src="cuon-matrix.js"></script>
+  <script>
+    async function loadShaders(name, context) {
+      const vshader = await fetch(`${name}/${name}.vert`).then( data => data.text() )
+      const fshader = await fetch(`${name}/${name}.frag`).then( data => data.text() )
+      window["initShaders"](context, vshader, fshader)
+    }
+  </script>
+  <script>
+      function screenCoordsToWebGL(coordsEvent, canvas) {
+        const rect = coordsEvent.target.getBoundingClientRect()
+        let x = coordsEvent.clientX - rect.left
+        let y = coordsEvent.clientY - rect.top
+        x = (2 * (x / canvas.offsetWidth)) - 1
+        y = (2 * ((canvas.offsetHeight - y) / canvas.offsetHeight)) - 1
+        return [x, y]
+      }
+  </script>
+</html>
