@@ -19,6 +19,11 @@ import RotatingTriangle from "./RotatingTriangle"
 import MultiAttributeSize from "./MultiAttributeSize"
 import MultiAttributeSize_Interleaved from "./MultiAttributeSize_Interleaved"
 import MultiAttributeColor from "./MultiAttributeColor"
+import ColoredTriangle from "./ColoredTriangle"
+import TextureQuad from "./TextureQuad"
+import MultiTexture from "./MultiTexture"
+import LookAtTriangles from "./LookAtTriangles"
+import LookAtRotatedTriangles from "./LookAtRotatedTriangles";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -41,6 +46,11 @@ ReactDOM.render(
         <Route path="/multi_attribute_size" element={<MultiAttributeSize/>}/>
         <Route path="/multi_attribute_size_interleaved" element={<MultiAttributeSize_Interleaved/>}/>
         <Route path="/multi_attribute_color" element={<MultiAttributeColor/>}/>
+        <Route path="/colored_triangle" element={<ColoredTriangle/>}/>
+        <Route path="/texture_quad" element={<TextureQuad/>}/>
+        <Route path="/multi_texture" element={<MultiTexture/>}/>
+        <Route path="/look_at_triangles" element={<LookAtTriangles/>}/>
+        <Route path="/look_at_rotated_triangles" element={<LookAtRotatedTriangles/>}/>
       </Route>
     </Routes>
 
