@@ -1,27 +1,27 @@
 import { useEffect } from "react"
 
 export default () => {
-  const VERTICES = new Float32Array([
-     .0,  .5, -.4,   .4, 1, .4, // Дальний зеленый треугольник
-    -.5, -.5, -.4,   .4, 1, .4,
-     .5, -.5, -.4,   1, .4, .4,
+  useEffect(async () => {
+    const VERTICES = new Float32Array([
+      .0,  .5, -.4,   .4, 1, .4, // Дальний зеленый треугольник
+      -.5, -.5, -.4,   .4, 1, .4,
+      .5, -.5, -.4,   1, .4, .4,
 
-     .5,  .4, -.2,   1, .4, .4, // Желтый треугольник в середине
-    -.5,  .4, -.2,   1,  1, .4,
+      .5,  .4, -.2,   1, .4, .4, // Желтый треугольник в середине
+      -.5,  .4, -.2,   1,  1, .4,
       0, -.6, -.2,   1,  1, .4,
 
       0,  .5,   0,  .4, .4,  1, // Ближний синий треугольник
-    -.5, -.5,   0,  .4, .4,  1,
-     .5, -.5,   0,   1, .4, .4
-  ])
-  const VERTICES_COUNT = 9
-  const FSIZE = VERTICES.BYTES_PER_ELEMENT
+      -.5, -.5,   0,  .4, .4,  1,
+      .5, -.5,   0,   1, .4, .4
+    ])
+    const VERTICES_COUNT = 9
+    const FSIZE = VERTICES.BYTES_PER_ELEMENT
 
-  const viewMatrix = new window["Matrix4"]().lookAt(0.20, 0.25, 0.25, 0, 0, 0, 0, 1, 0)
-  const modelMatrix = new window["Matrix4"]().rotate(-10, 0, 0, 1)
-  const modelViewMatrix = viewMatrix.multiply(modelMatrix)
+    const viewMatrix = new window["Matrix4"]().lookAt(0.20, 0.25, 0.25, 0, 0, 0, 0, 1, 0)
+    const modelMatrix = new window["Matrix4"]().rotate(-10, 0, 0, 1)
+    const modelViewMatrix = viewMatrix.multiply(modelMatrix)
 
-  useEffect(async () => {
     const canvas = document.getElementById("c")
     canvas.width = canvas.clientWidth
     canvas.height = canvas.clientHeight

@@ -1,15 +1,14 @@
 import { useEffect } from "react"
 
 export default () => {
-
-  const VERTICES = new Float32Array([
-    0.0, 0.5,
-    -0.5, -0.5,
-    0.5, -0.5
-  ])
-  const VERTICES_COUNT = 3
-
   useEffect(async () => {
+    const VERTICES = new Float32Array([
+      0.0, 0.5,
+      -0.5, -0.5,
+      0.5, -0.5
+    ])
+    const VERTICES_COUNT = 3
+
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
     await window['loadShaders']('MultiPoint', gl)

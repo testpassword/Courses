@@ -1,18 +1,18 @@
 import { useEffect } from "react"
 
 export default () => {
-  const VERTICES = new Float32Array([
-    -.5,  .5,     0,     1,
-    -.5, -.5,     0,     0,
-     .5,  .5,     1,     1,
-     .5, -.5,     1,     0
-  ])
-  const VERTICES_COUNT = 4
-  const FSIZE = VERTICES.BYTES_PER_ELEMENT
-
-  const modelMatrix = new window["Matrix4"]()
-
   useEffect(async () => {
+    const VERTICES = new Float32Array([
+      -.5,  .5,     0,     1,
+      -.5, -.5,     0,     0,
+      .5,  .5,     1,     1,
+      .5, -.5,     1,     0
+    ])
+    const VERTICES_COUNT = 4
+    const FSIZE = VERTICES.BYTES_PER_ELEMENT
+
+    const modelMatrix = new window["Matrix4"]()
+
     const canvas = document.getElementById("c")
     canvas.width = canvas.clientWidth
     canvas.height = canvas.clientHeight

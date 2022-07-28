@@ -23,7 +23,9 @@ import ColoredTriangle from "./ColoredTriangle"
 import TextureQuad from "./TextureQuad"
 import MultiTexture from "./MultiTexture"
 import LookAtTriangles from "./LookAtTriangles"
-import LookAtRotatedTriangles from "./LookAtRotatedTriangles";
+import LookAtRotatedTriangles from "./LookAtRotatedTriangles"
+import LookAtTrianglesWithKeys from "./LookAtTrianglesWithKeys"
+import OrtoView from "./OrtoView"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -51,6 +53,8 @@ ReactDOM.render(
         <Route path="/multi_texture" element={<MultiTexture/>}/>
         <Route path="/look_at_triangles" element={<LookAtTriangles/>}/>
         <Route path="/look_at_rotated_triangles" element={<LookAtRotatedTriangles/>}/>
+        <Route path="/look_at_triangles_with_keys" element={<LookAtTrianglesWithKeys/>}/>
+        <Route path="/orto_view" element={<OrtoView/>}/>
       </Route>
     </Routes>
 

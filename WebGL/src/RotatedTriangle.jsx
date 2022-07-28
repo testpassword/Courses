@@ -1,20 +1,19 @@
 import { useEffect } from "react"
 
 export default () => {
-
-  const VERTICES = new Float32Array([
-    0.0, 0.5,
-    -0.5, -0.5,
-    0.5, -0.5,
-  ])
-  const VERTICES_COUNT = 3
-  const ANGLE = 90
-
-  const radian = Math.PI * ANGLE / 180
-  const cosB = Math.cos(radian)
-  const sinB = Math.sin(radian)
-
   useEffect(async () => {
+    const VERTICES = new Float32Array([
+      0.0, 0.5,
+      -0.5, -0.5,
+      0.5, -0.5,
+    ])
+    const VERTICES_COUNT = 3
+    const ANGLE = 90
+
+    const radian = Math.PI * ANGLE / 180
+    const cosB = Math.cos(radian)
+    const sinB = Math.sin(radian)
+
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
     await window['loadShaders']('RotatedTriangle', gl)

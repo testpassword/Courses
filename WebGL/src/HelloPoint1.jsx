@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 
 export default () => {
-
   useEffect( async () => {
     const gl = window["getWebGLContext"](document.getElementById("c"))
     await window['loadShaders']('HelloPoint1', gl)

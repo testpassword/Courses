@@ -1,20 +1,20 @@
 import { useEffect } from "react"
 
 export default () => {
-  const VERTICES = new Float32Array([
-    0.0, 0.5,
-    -0.5, -0.5,
-    0.5, -0.5,
-  ])
-  const VERTICES_COUNT = 3
-
-  const ANGLE_STEP = 45
-  let currentAngel = 0.0
-
-  const modelMatrix = new window["Matrix4"]()
-  let u_modelMatrix = null
-
   useEffect(async () => {
+    const VERTICES = new Float32Array([
+      0.0, 0.5,
+      -0.5, -0.5,
+      0.5, -0.5,
+    ])
+    const VERTICES_COUNT = 3
+
+    const ANGLE_STEP = 45
+    let currentAngel = 0.0
+
+    const modelMatrix = new window["Matrix4"]()
+    let u_modelMatrix
+
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
     await window['loadShaders']('RotatingTriangle', gl)

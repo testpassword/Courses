@@ -1,10 +1,9 @@
 import { useEffect } from "react"
 
 export default () => {
-
-  const g_points = []
-
   useEffect(async () => {
+    const g_points = []
+
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
     await window['loadShaders']('ClickedPoints', gl)

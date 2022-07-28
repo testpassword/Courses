@@ -2,11 +2,10 @@ import { useEffect } from "react"
 import { zip } from "underscore"
 
 export default () => {
-
-  const g_points = []
-  const g_colors = []
-
   useEffect(async () => {
+    const g_points = []
+    const g_colors = []
+
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
     await window['loadShaders']('ColoredPoints', gl)

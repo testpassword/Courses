@@ -1,17 +1,17 @@
 import { useEffect } from "react"
 
 export default () => {
-  const VERTICES = new Float32Array([
-     .0,  .5,     10.0,     1.0, 0.0, 0.0,
-    -.5, -.5,     20.0,     0.0, 1.0, 0.0,
-     .5, -.5,     30.0,     0.0, 0.0, 1.0
-  ])
-  const VERTICES_COUNT = 3
-  const FSIZE = VERTICES.BYTES_PER_ELEMENT
-
-  const modelMatrix = new window["Matrix4"]().setScale(.5, .5, .5)
-
   useEffect(async () => {
+    const VERTICES = new Float32Array([
+      .0,  .5,     10.0,     1.0, 0.0, 0.0,
+      -.5, -.5,     20.0,     0.0, 1.0, 0.0,
+      .5, -.5,     30.0,     0.0, 0.0, 1.0
+    ])
+    const VERTICES_COUNT = 3
+    const FSIZE = VERTICES.BYTES_PER_ELEMENT
+
+    const modelMatrix = new window["Matrix4"]().setScale(.5, .5, .5)
+
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
     await window['loadShaders']('MultiAttributeColor', gl)
