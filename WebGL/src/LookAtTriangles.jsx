@@ -24,7 +24,7 @@ export default () => {
     canvas.width = canvas.clientWidth
     canvas.height = canvas.clientHeight
     const gl = window["getWebGLContext"](canvas)
-    await window['loadShaders']('LookAtTriangles', gl)
+    await window['loadAndInitShaders']('LookAtTriangles', gl)
     gl.clearColor(0.0, 0.0, 0.0, 1.0)
 
     const initVertexBuf = () => {

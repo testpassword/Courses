@@ -6,7 +6,7 @@ export default () => {
 
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
-    await window['loadShaders']('ClickedPoints', gl)
+    await window['loadAndInitShaders']('ClickedPoints', gl)
     const a_Position = gl.getAttribLocation(gl.program, 'a_Position')
     gl.clearColor(0.0, 0.0, 0.0, 1.0)
     gl.clear(gl.COLOR_BUFFER_BIT)

@@ -22,10 +22,18 @@
   <script src="cuon-utils.js"></script>
   <script src="cuon-matrix.js"></script>
   <script>
+    async function loadAndInitShaders(name, context) {
+      const vShader = await fetch(`${name}/${name}.vert`).then( data => data.text() )
+      const fShader = await fetch(`${name}/${name}.frag`).then( data => data.text() )
+      window["initShaders"](context, vShader, fShader)
+      return { vShader, fShader }
+    }
+  </script>
+  <script>
     async function loadShaders(name, context) {
-      const vshader = await fetch(`${name}/${name}.vert`).then( data => data.text() )
-      const fshader = await fetch(`${name}/${name}.frag`).then( data => data.text() )
-      window["initShaders"](context, vshader, fshader)
+      const vShader = await fetch(`${name}/${name}.vert`).then( data => data.text() )
+      const fShader = await fetch(`${name}/${name}.frag`).then( data => data.text() )
+      return { vShader, fShader }
     }
   </script>
   <script>

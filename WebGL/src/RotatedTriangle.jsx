@@ -16,7 +16,7 @@ export default () => {
 
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
-    await window['loadShaders']('RotatedTriangle', gl)
+    await window['loadAndInitShaders']('RotatedTriangle', gl)
     gl.clearColor(0.0, 0.0, 0.0, 1.0)
     const u_CosB = gl.getUniformLocation(gl.program, 'u_CosB')
     const u_SinB = gl.getUniformLocation(gl.program, 'u_SinB')

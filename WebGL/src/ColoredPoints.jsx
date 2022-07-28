@@ -8,7 +8,7 @@ export default () => {
 
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
-    await window['loadShaders']('ColoredPoints', gl)
+    await window['loadAndInitShaders']('ColoredPoints', gl)
     const a_Position = gl.getAttribLocation(gl.program, 'a_Position')
     const u_FragColor = gl.getUniformLocation(gl.program, 'u_FragColor')
     gl.clearColor(0.0, 0.0, 0.0, 1.0)

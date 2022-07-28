@@ -12,7 +12,7 @@ export default () => {
 
     const canvas = document.getElementById("c")
     const gl = window["getWebGLContext"](canvas)
-    await window['loadShaders']('TranslatedTriangle', gl)
+    await window['loadAndInitShaders']('TranslatedTriangle', gl)
     gl.clearColor(0.0, 0.0, 0.0, 1.0)
     const u_Translation = gl.getUniformLocation(gl.program, 'u_Translation')
     gl.uniform4fv(u_Translation, TRANSLATION)

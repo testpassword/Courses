@@ -26,6 +26,7 @@ import LookAtTriangles from "./LookAtTriangles"
 import LookAtRotatedTriangles from "./LookAtRotatedTriangles"
 import LookAtTrianglesWithKeys from "./LookAtTrianglesWithKeys"
 import OrtoView from "./OrtoView"
+import SimpleEngine from "./SimpleEngine"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -55,6 +56,7 @@ ReactDOM.render(
         <Route path="/look_at_rotated_triangles" element={<LookAtRotatedTriangles/>}/>
         <Route path="/look_at_triangles_with_keys" element={<LookAtTrianglesWithKeys/>}/>
         <Route path="/orto_view" element={<OrtoView/>}/>
+        <Route path="/simple_engine" element={<SimpleEngine/>}/>
       </Route>
     </Routes>
 

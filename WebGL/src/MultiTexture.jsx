@@ -17,7 +17,7 @@ export default () => {
     canvas.width = canvas.clientWidth
     canvas.height = canvas.clientHeight
     const gl = window["getWebGLContext"](canvas)
-    await window['loadShaders']('MultiTexture', gl)
+    await window['loadAndInitShaders']('MultiTexture', gl)
     gl.clearColor(0.0, 0.0, 0.0, 1.0)
 
     const initVertexBuf = () => {

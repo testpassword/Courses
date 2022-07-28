@@ -3,7 +3,7 @@ import { useEffect } from "react"
 export default () => {
   useEffect(async () => {
     const gl = window["getWebGLContext"](document.getElementById("c"))
-    await window['loadShaders']('HelloPoint2', gl)
+    await window['loadAndInitShaders']('HelloPoint2', gl)
     const a_Position = gl.getAttribLocation(gl.program, 'a_Position')
     const a_PointSize = gl.getAttribLocation(gl.program, 'a_PointSize')
     gl.vertexAttrib3f(a_Position, 0.0, 0.0, 0.0)

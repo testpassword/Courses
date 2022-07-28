@@ -16,7 +16,7 @@ export default () => {
     canvas.width = canvas.clientWidth
     canvas.height = canvas.clientHeight
     const gl = window["getWebGLContext"](canvas)
-    await window['loadShaders']('ColoredTriangle', gl)
+    await window['loadAndInitShaders']('ColoredTriangle', gl)
     gl.clearColor(0.0, 0.0, 0.0, 1.0)
 
     const initVertexBuf = () => {
