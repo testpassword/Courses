@@ -16,7 +16,7 @@ export default () => {
   const [renderMode, setRenderMode] = useState(undefined) // gl.TRIANGLES but before gl isn't initialized
   const [lastPressedKey, setLastPressedKey] = useState('')
 
-  let gl
+  let GL
 
   const VERTICES = new Float32Array([
     .0,  .5, -.4,   .4, 1, .4, // Дальний зеленый треугольник
@@ -61,20 +61,20 @@ export default () => {
   }
 
   const create = () => {
-    window["initShaders"](gl, vShaderCode, fShaderCode)
-    gl.clearColor(0.0, 0.0, 0.0, 1.0)
+    window["initShaders"](GL, vShaderCode, fShaderCode)
+    GL.clearColor(0.0, 0.0, 0.0, 1.0)
 
     const initVertexBuf = () => {
-      const vertexBuf = gl.createBuffer()
-      gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuf)
-      gl.bufferData(gl.ARRAY_BUFFER, VERTICES, gl.STATIC_DRAW)
-      const a_Position = gl.getAttribLocation(gl.program, 'a_Position')
-      gl.vertexAttribPointer(a_Position, 3, gl.FLOAT, false, FSIZE * 6, 0)
-      gl.enableVertexAttribArray(a_Position)
-      const a_Color = gl.getAttribLocation(gl.program, 'a_Color')
-      gl.vertexAttribPointer(a_Color, 3, gl.FLOAT, false, FSIZE * 6, FSIZE * 3)
-      gl.enableVertexAttribArray(a_Color)
-      u_ProjMatrix = gl.getUniformLocation(gl.program, 'u_ProjMatrix')
+      const vertexBuf = GL.createBuffer()
+      GL.bindBuffer(GL.ARRAY_BUFFER, vertexBuf)
+      GL.bufferData(GL.ARRAY_BUFFER, VERTICES, GL.STATIC_DRAW)
+      const a_Position = GL.getAttribLocation(GL.program, 'a_Position')
+      GL.vertexAttribPointer(a_Position, 3, GL.FLOAT, false, FSIZE * 6, 0)
+      GL.enableVertexAttribArray(a_Position)
+      const a_Color = GL.getAttribLocation(GL.program, 'a_Color')
+      GL.vertexAttribPointer(a_Color, 3, GL.FLOAT, false, FSIZE * 6, FSIZE * 3)
+      GL.enableVertexAttribArray(a_Color)
+      u_ProjMatrix = GL.getUniformLocation(GL.program, 'u_ProjMatrix')
     }
 
     const tick = () => {
@@ -82,9 +82,9 @@ export default () => {
       projMatrix.rotate(...rotate)
       projMatrix.scale(...scale)
       viewMatrix.lookAt(eyeX, eyeY, .25, 0, 0, 0, 0, 1, 0)
-      gl.uniformMatrix4fv(u_ProjMatrix, false, projMatrix.elements)
-      gl.clear(gl.COLOR_BUFFER_BIT)
-      gl.drawArrays(renderMode.val, 0, VERTICES_COUNT)
+      GL.uniformMatrix4fv(u_ProjMatrix, false, projMatrix.elements)
+      GL.clear(GL.COLOR_BUFFER_BIT)
+      GL.drawArrays(renderMode.val, 0, VERTICES_COUNT)
     }
 
     document.onkeydown = e => {
@@ -103,23 +103,25 @@ export default () => {
     const canvas = document.getElementById("c")
     canvas.width = canvas.clientWidth
     canvas.height = canvas.clientHeight
-    gl = window["getWebGLContext"](canvas)
+    GL = window["getWebGLContext"](canvas)
     const modes = [
-      { name: 'TRIANGLES', val: gl.TRIANGLES },
-      { name: 'TRIANGLE_STRIP', val: gl.TRIANGLE_STRIP },
-      { name: 'TRIANGLE_FAN', val: gl.TRIANGLE_FAN },
-      { name: 'POINTS', val: gl.POINTS },
-      { name: 'LINES', val: gl.LINES },
-      { name: 'LINE_STRIP', val: gl.LINE_STRIP },
-      { name: 'LINE_LOOP', val: gl.LINE_LOOP },
+      { name: 'TRIANGLES', val: GL.TRIANGLES },
+      { name: 'TRIANGLE_STRIP', val: GL.TRIANGLE_STRIP },
+      { name: 'TRIANGLE_FAN', val: GL.TRIANGLE_FAN },
+      { name: 'POINTS', val: GL.POINTS },
+      { name: 'LINES', val: GL.LINES },
+      { name: 'LINE_STRIP', val: GL.LINE_STRIP },
+      { name: 'LINE_LOOP', val: GL.LINE_LOOP },
     ]
-    const shaders = await window['loadShaders']('OrtoView', gl)
+    const shaders = await window['loadShaders']('OrtoView', GL)
     if (renderModes.length === 0) setRenderModes(modes)
     if (renderMode === undefined) setRenderMode(modes[0])
     if (vShaderCode === '') setVShaderCode(shaders.vShader)
     if (fShaderCode === '') setFShaderCode(shaders.fShader)
     create()
   })
+
+  // TODO: переключение режима проекций (orto, perspective) и функций через enable
 
   return <div>
     <div className="absolute text-white p-4 text-xs">

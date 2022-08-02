@@ -27,6 +27,8 @@ import LookAtRotatedTriangles from "./LookAtRotatedTriangles"
 import LookAtTrianglesWithKeys from "./LookAtTrianglesWithKeys"
 import OrtoView from "./OrtoView"
 import SimpleEngine from "./SimpleEngine"
+import PerspectiveView from "./PerspectiveView";
+import DepthBuffer from "./DepthBuffer";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -57,6 +59,8 @@ ReactDOM.render(
         <Route path="/look_at_triangles_with_keys" element={<LookAtTrianglesWithKeys/>}/>
         <Route path="/orto_view" element={<OrtoView/>}/>
         <Route path="/simple_engine" element={<SimpleEngine/>}/>
+        <Route path="/perspective_view" element={<PerspectiveView/>}/>
+        <Route path="/depth_buffer" element={<DepthBuffer/>}/>
       </Route>
     </Routes>
 

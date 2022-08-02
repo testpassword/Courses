@@ -50,14 +50,9 @@ Matrix4.prototype.set = function(src) {
   s = src.elements;
   d = this.elements;
 
-  if (s === d) {
-    return;
-  }
-
   for (i = 0; i < 16; ++i) {
     d[i] = s[i];
   }
-
   return this;
 };
 
