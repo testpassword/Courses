@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export default () => {
   const [near, setNear] = useState(-1)
-  const [far, setFar] = useState(3)
+  const [far, setFar] = useState(10)
 
   const [eyeX, setEyeX] = useState(.2)
   const [eyeY, setEyeY] = useState(.25)
@@ -16,20 +16,22 @@ export default () => {
   const [renderMode, setRenderMode] = useState(undefined) // gl.TRIANGLES but before gl isn't initialized
   const [lastPressedKey, setLastPressedKey] = useState('')
 
+  const [depthTest, setDepthTest] = useState(true)
+
   let GL
 
   const VERTICES = new Float32Array([
     .0,  .5, -.4,   .4, 1, .4, // Дальний зеленый треугольник
-    -.5, -.5, -.4,   .4, 1, .4,
+    -.5, -.5, -.4,  .4, 1, .4,
     .5, -.5, -.4,   1, .4, .4,
 
     .5,  .4, -.2,   1, .4, .4, // Желтый треугольник в середине
-    -.5,  .4, -.2,   1,  1, .4,
-    0, -.6, -.2,   1,  1, .4,
+    -.5,  .4, -.2,  1,  1, .4,
+    0, -.6, -.2,    1,  1, .4,
 
-    0,  .5,   0,  .4, .4,  1, // Ближний синий треугольник
-    -.5, -.5,   0,  .4, .4,  1,
-    .5, -.5,   0,   1, .4, .4
+    0,  .5,   0,   .4, .4,  1, // Ближний синий треугольник
+    -.5, -.5, 0,    .4, .4,  1,
+    .5, -.5,  0,    1, .4, .4
   ])
   const VERTICES_COUNT = 9
   const FSIZE = VERTICES.BYTES_PER_ELEMENT
@@ -41,7 +43,7 @@ export default () => {
 
   const shiftActions = {
     '+': () => setScale(prev => prev.map(it => it + .05)),
-    'ArrowLeft': () => setScale( prev => prev.map( it => it + .05 ) ),
+    'ArrowLeft': () => setNear(prev => prev + 0.05),
     'ArrowRight': () => setNear(prev => prev - 0.05),
     'ArrowUp': () => setFar(prev => prev + 0.05),
     'ArrowDown': () => setFar(prev => prev - 0.05)
@@ -83,7 +85,7 @@ export default () => {
       projMatrix.scale(...scale)
       viewMatrix.lookAt(eyeX, eyeY, .25, 0, 0, 0, 0, 1, 0)
       GL.uniformMatrix4fv(u_ProjMatrix, false, projMatrix.elements)
-      GL.clear(GL.COLOR_BUFFER_BIT)
+      GL.clear(GL.COLOR_BUFFER_BIT | GL.DEPTH_BUFFER_BIT)
       GL.drawArrays(renderMode.val, 0, VERTICES_COUNT)
     }
 
@@ -138,17 +140,46 @@ export default () => {
       <br/>
       <span>last pressed key: { lastPressedKey }</span>
       <br/>
-      <textarea className="p-2 text-black my-3" cols="33" rows="7" value={ vShaderCode } onChange={ e => { setVShaderCode(e.target.value) } }/>
+      <textarea className="p-2 text-black my-3"
+                cols="33"
+                rows="7"
+                value={ vShaderCode }
+                onChange={ e => { setVShaderCode(e.target.value) } }
+      />
       <br/>
-      <textarea className="p-2 text-black my-3" cols="33" rows="7" value={ fShaderCode } onChange={ e => setFShaderCode(e.target.value) }/>
+      <textarea className="p-2 text-black my-3"
+                cols="33"
+                rows="7"
+                value={ fShaderCode }
+                onChange={ e => setFShaderCode(e.target.value) }
+      />
       <br/>
       <div>
-        <label>Render mode:</label>
-        <select className="text-black mx-2" onChange={ e => setRenderMode(JSON.parse(e.target.value)) }>
-          { renderModes.map( m => <option key={ m.name } value={ JSON.stringify(m) }>{ m.name }</option> ) }
+        <label>Render mode: </label>
+        <select className="text-black mx-2"
+                onChange={ e => setRenderMode(JSON.parse(e.target.value)) }
+        >
+          { renderModes.map( m =>
+            <option key={ m.name }
+                    value={ JSON.stringify(m) }>{ m.name }
+            </option>
+          )}
         </select>
       </div>
+      <div>
+        <label>Depth test: </label>
+        <input type="checkbox"
+               checked={ depthTest }
+               onChange={ e => {
+                 setDepthTest(!e.target.value)
+                 if (e.target.value) GL?.enable(GL.DEPTH_TEST)
+                 else GL?.disable(GL.DEPTH_TEST)
+               }
+        }/>
+      </div>
     </div>
-    <canvas id="c" className="w-full h-screen"/>
+    <canvas id="c"
+            className="w-full h-screen"
+    />
   </div>
 }
