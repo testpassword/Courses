@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 
 export default () => {
 
-  const [eyeX, setEyeX] = useState(5)
+  const [eyeX, setEyeX] = useState(-5)
   const [eyeY, setEyeY] = useState(2)
   const [eyeZ, setEyeZ] = useState(4)
 
   useEffect(async () => {
-    const VERTICES = new Float32Array([
+    const VERTICES_AND_COLORS = new Float32Array([
        1, 1, 1,    1, 1, 1,
       -1, 1, 1,    1, 0, 1,
       -1,-1, 1,    1, 0, 0,
@@ -26,7 +26,7 @@ export default () => {
       4, 7, 6, 4, 6, 5
     ])
     const VERTICES_COUNT = edges.length
-    const FSIZE = VERTICES.BYTES_PER_ELEMENT
+    const FSIZE = VERTICES_AND_COLORS.BYTES_PER_ELEMENT
 
     const [modelMatrix, viewMatrix, projMatrix, mvpMatrix] = Array(4).fill(new window["Matrix4"]())
     let u_MvpMatrix
@@ -46,7 +46,7 @@ export default () => {
     const initVertexBuf = () => {
       const vertexBuf = gl.createBuffer()
       gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuf)
-      gl.bufferData(gl.ARRAY_BUFFER, VERTICES, gl.STATIC_DRAW)
+      gl.bufferData(gl.ARRAY_BUFFER, VERTICES_AND_COLORS, gl.STATIC_DRAW)
 
       const edgesBuf = gl.createBuffer()
       gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, edgesBuf)
@@ -72,10 +72,10 @@ export default () => {
 
     document.onkeydown = e => {
       ({
-        'ArrowLeft': () => setEyeX( prev => prev + .1 ),
-        'ArrowRight': () => setEyeX( prev => prev - .1 ),
-        'ArrowUp': () => setEyeY( prev => prev + .1 ),
-        'ArrowDown': () => setEyeY( prev => prev - .1 )
+        'ArrowLeft': () => setEyeX( prev => prev + .5 ),
+        'ArrowRight': () => setEyeX( prev => prev - .5 ),
+        'ArrowUp': () => setEyeY( prev => prev + .5 ),
+        'ArrowDown': () => setEyeY( prev => prev - .5 )
       })[e.key]?.()
       tick()
     }

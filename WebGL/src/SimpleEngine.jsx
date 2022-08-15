@@ -21,20 +21,24 @@ export default () => {
   let GL
 
   const VERTICES = new Float32Array([
-    .0,  .5, -.4,   .4, 1, .4, // Дальний зеленый треугольник
-    -.5, -.5, -.4,  .4, 1, .4,
-    .5, -.5, -.4,   1, .4, .4,
+    .0,  .5, -.4, // Дальний зеленый треугольник
+    -.5, -.5, -.4,
+    .5, -.5, -.4,
 
-    .5,  .4, -.2,   1, .4, .4, // Желтый треугольник в середине
-    -.5,  .4, -.2,  1,  1, .4,
-    0, -.6, -.2,    1,  1, .4,
+    .5,  .4, -.2, // Желтый треугольник в середине
+    -.5,  .4, -.2,
+    0, -.6, -.2,
 
-    0,  .5,   0,   .4, .4,  1, // Ближний синий треугольник
-    -.5, -.5, 0,    .4, .4,  1,
-    .5, -.5,  0,    1, .4, .4
+    0,  .5,   0, // Ближний синий треугольник
+    -.5, -.5, 0,
+    .5, -.5,  0,
   ])
-  const VERTICES_COUNT = 9
-  const FSIZE = VERTICES.BYTES_PER_ELEMENT
+  const COLORS = new Float32Array([
+    .4, 1, .4,    .4, 1, .4,    1, .4, .4,
+    1, .4, .4,    1,  1, .4,    1,  1, .4,
+    .4, .4,  1,   .4, .4,  1,   1, .4, .4
+  ])
+  const VERTICES_COUNT = COLORS.length / 3 // every vertex contains 3 element of array
 
   const viewMatrix = new window["Matrix4"]()
   let u_ProjMatrix
@@ -66,17 +70,15 @@ export default () => {
     window["initShaders"](GL, vShaderCode, fShaderCode)
     GL.clearColor(0.0, 0.0, 0.0, 1.0)
 
-    const initVertexBuf = () => {
-      const vertexBuf = GL.createBuffer()
-      GL.bindBuffer(GL.ARRAY_BUFFER, vertexBuf)
-      GL.bufferData(GL.ARRAY_BUFFER, VERTICES, GL.STATIC_DRAW)
-      const a_Position = GL.getAttribLocation(GL.program, 'a_Position')
-      GL.vertexAttribPointer(a_Position, 3, GL.FLOAT, false, FSIZE * 6, 0)
-      GL.enableVertexAttribArray(a_Position)
-      const a_Color = GL.getAttribLocation(GL.program, 'a_Color')
-      GL.vertexAttribPointer(a_Color, 3, GL.FLOAT, false, FSIZE * 6, FSIZE * 3)
-      GL.enableVertexAttribArray(a_Color)
-      u_ProjMatrix = GL.getUniformLocation(GL.program, 'u_ProjMatrix')
+    const initBuf = (data, bufType, attribute, type = GL.FLOAT, num = 3) => {
+      const buf = GL.createBuffer()
+      GL.bindBuffer(bufType, buf)
+      GL.bufferData(bufType, data, GL.STATIC_DRAW)
+      if (bufType === GL.ARRAY_BUFFER) {
+        const a_attribute = GL.getAttribLocation(GL.program, attribute)
+        GL.vertexAttribPointer(a_attribute, num, type, false, 0, 0)
+        GL.enableVertexAttribArray(a_attribute)
+      }
     }
 
     const tick = () => {
@@ -97,7 +99,9 @@ export default () => {
       }
     }
 
-    initVertexBuf()
+    initBuf(VERTICES, GL.ARRAY_BUFFER, 'a_Position')
+    initBuf(COLORS, GL.ARRAY_BUFFER, 'a_Color')
+    u_ProjMatrix = GL.getUniformLocation(GL.program, 'u_ProjMatrix')
     tick()
   }
 
@@ -171,8 +175,8 @@ export default () => {
         <input type="checkbox"
                checked={ depthTest }
                onChange={ e => {
-                 setDepthTest(!e.target.value)
-                 if (e.target.value) GL?.enable(GL.DEPTH_TEST)
+                 setDepthTest(e.target.checked)
+                 if (e.target.checked) GL?.enable(GL.DEPTH_TEST)
                  else GL?.disable(GL.DEPTH_TEST)
                }
         }/>
