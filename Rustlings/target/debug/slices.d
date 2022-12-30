@@ -1,1 +1,1 @@
-V:\storehouse\courses\Rustlings\target\debug\slices.exe: V:\storehouse\courses\Rustlings\Common\ Programming\ Concepts\Data\ Types\Slices\src\main.rs V:\storehouse\courses\Rustlings\target\debug\build\escargot-3fee24f2f517f9c4\out\current_target.txt build.rs
+/Users/pugalol/Desktop/Rustlings/target/debug/slices: /Users/pugalol/Desktop/Rustlings/Understanding\ Ownership/The\ Slice\ Type/Nice\ Slice/src/main.rs

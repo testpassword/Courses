@@ -3,4 +3,6 @@ fn main() {
     println!("The answer is {}", answer);
 }
 
-fn square(num: i32) -> i32 { num * num }
+fn square(num: i32) -> i32 {
+    num * num
+}

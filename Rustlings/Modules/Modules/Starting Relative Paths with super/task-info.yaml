@@ -1,0 +1,29 @@
+type: theory
+files:
+- name: Cargo.toml
+  visible: false
+  encrypted_text: m9XZNRB4SP+Ysnl4An4VfJcKJHJIcpBS1QFXY26j5Mc2PRkDemnjHqUrH7hLvEMduDQuFuUU5wOYLLBPYLjinA==
+  learner_created: false
+- name: src/lib.rs
+  visible: true
+  placeholders:
+  - offset: 226
+    length: 7
+    placeholder_text: 'super::'
+    initial_state:
+      length: 7
+      offset: 226
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: Y2APs9wtOMwL22iXXo2EqQ==
+  encrypted_text: 99YM9R0C2insAJB3LLfboZAXgZj/0g8+DUzS30BqRb8AqV3JgKQM0xbk3odl7yXhHfgex+AHKclo+zlTtODNgPcFIm1XN07sU343uBldJhIePqv4Oo5szhjN2s3kbjtj375H29YTnYiZ8aYPSZa34fjW38HYR1pDyIUBmhPLKPFqz3dURL14TOki/rnf/u8m3qwIcCQncoOAtasD0aXcjL2u0rLA42Xdp4/gcUGkACho7HAVQU+r46nj57of3xk529KildiBMzLEPVI25oXkwR7I9GMY4f4c9GonaMjFC8Fe2yOYDlwNdw1zZPetAmxHn/pnzaIAFONxYERmkYXKpoIZxma/L2wRAjWEwaZnCOLCU/vRygcNcfCZgrMLe5/0fphaw03LguQnOeEGsWVuFYH7W15Ru4DuNEz7ZSNQ6g7Rlf/ySO1YGQy9DebY840Kydy3ID7t9ww2uJ80EbgBEw==
+  learner_created: false
+- name: runConfigurations/Build.run.xml
+  visible: false
+  learner_created: false
+feedback_link: https://docs.google.com/forms/d/e/1FAIpQLSdfJQgjsbDA4pPGpklj3vJnKNspd9wmEHzAgh6EkoJy2IiRuw/viewform?usp=pp_url&entry.2103429047=Modules+/+Modules+/+Starting+Relative+Paths+with+super
+status: Solved
+record: -1
+solution_hidden: true
+post_submission_on_open: true

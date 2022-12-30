@@ -1,1 +1,1 @@
-V:\storehouse\courses\Rustlings\target\debug\tuple_index.exe: V:\storehouse\courses\Rustlings\Common\ Programming\ Concepts\Data\ Types\Tuple\ Index\src\main.rs V:\storehouse\courses\Rustlings\target\debug\build\escargot-3fee24f2f517f9c4\out\current_target.txt build.rs
+/Users/pugalol/Desktop/Rustlings/target/debug/tuple_index: /Users/pugalol/Desktop/Rustlings/Common\ Programming\ Concepts/Tuples\ and\ Arrays/Tuple\ Index/src/main.rs

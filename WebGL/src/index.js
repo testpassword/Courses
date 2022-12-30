@@ -31,6 +31,7 @@ import PerspectiveView from "./PerspectiveView"
 import DepthBuffer from "./DepthBuffer"
 import HelloCube from "./HelloCube"
 import ColoredCube from "./ColoredCube"
+import LightedCube from "./LightedCube"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -65,6 +66,7 @@ ReactDOM.render(
         <Route path="/depth_buffer" element={<DepthBuffer/>}/>
         <Route path="/hello_cube" element={<HelloCube/>}/>
         <Route path="/colored_cube" element={<ColoredCube/>}/>
+        <Route path="/lighted_cube" element={<LightedCube/>}/>
       </Route>
     </Routes>
 

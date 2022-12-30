@@ -1,1 +1,1 @@
-V:\storehouse\courses\Rustlings\target\debug\tuples.exe: V:\storehouse\courses\Rustlings\Common\ Programming\ Concepts\Data\ Types\Tuples\src\main.rs V:\storehouse\courses\Rustlings\target\debug\build\escargot-3fee24f2f517f9c4\out\current_target.txt build.rs
+/Users/pugalol/Desktop/Rustlings/target/debug/tuples: /Users/pugalol/Desktop/Rustlings/Common\ Programming\ Concepts/Tuples\ and\ Arrays/Destructure\ a\ Tuple/src/main.rs

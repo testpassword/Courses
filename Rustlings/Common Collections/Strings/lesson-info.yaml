@@ -1,10 +1,12 @@
 content:
 - Intro
-- Returning a String
+- Creating a New String
+- Return a String
+- Updating a String
+- Indexing into Strings
+- Slicing Strings
+- Iterating Over Strings
 - String Slice
-- Vectors
-- HashMaps
-- Declaring a Vector
-- Loop Over a Vector
-- Declaring a HashMap
-- Modifying a HashMap
+- Strings and strs
+- Process Some Strings
+- Summary
